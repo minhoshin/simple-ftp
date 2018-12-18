@@ -1,0 +1,3 @@
+# simple ftp
+
+npm start
