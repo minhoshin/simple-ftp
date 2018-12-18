@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action='upload' method='post' enctype="multipart/form-data")
+    input(type='file' name='uploadfile')
+    input(type='submit')
+  ul
+    -if (files.length === 0)
+      li not exist files
+    -else
+      -for (var i=0; i<files.length; i++)
+        li
+          a(href='upload/'+files[i], target='_blank') #{files[i]}
